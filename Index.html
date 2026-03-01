@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trần Đỉnh Quân</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tile { transition: all 0.2s; }
+        .empty-tile { background-color: black !important; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col items-center py-10">
+
+    <button id="action-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-8 rounded shadow-lg mb-6 transition">
+        Bắt đầu
+    </button>
+
+    <div class="flex flex-col md:flex-row gap-8 mb-10">
+        <div id="board" class="grid grid-cols-4 gap-3 bg-white p-4 rounded-xl shadow-md border border-gray-100">
+            </div>
+
+        <div class="flex flex-col gap-4 w-48">
+            <div class="bg-green-100 p-4 rounded-xl text-center shadow-sm">
+                <p class="text-gray-600 font-medium">Đồng Hồ</p>
+                <h2 id="timer" class="text-3xl font-bold text-gray-800">00:00</h2>
+            </div>
+
+            <div class="bg-white p-4 rounded-xl shadow-md border border-gray-100 text-center">
+                <p class="text-xs font-bold text-gray-500 mb-3">Hướng Dẫn Di Chuyển</p>
+                <div class="grid grid-cols-3 gap-1 justify-items-center text-[10px]">
+                    <div></div><div class="bg-gray-100 p-1 w-6 rounded shadow-sm">↑</div><div></div>
+                    <div class="bg-gray-100 p-1 w-6 rounded shadow-sm">←</div>
+                    <div class="bg-gray-100 p-1 w-6 rounded shadow-sm">↓</div>
+                    <div class="bg-gray-100 p-1 w-6 rounded shadow-sm">→</div>
+                </div>
+                <div class="grid grid-cols-3 gap-1 justify-items-center mt-2 text-[10px]">
+                    <div></div><div class="bg-gray-100 p-1 w-6 rounded shadow-sm">W</div><div></div>
+                    <div class="bg-gray-100 p-1 w-6 rounded shadow-sm">A</div>
+                    <div class="bg-gray-100 p-1 w-6 rounded shadow-sm">S</div>
+                    <div class="bg-gray-100 p-1 w-6 rounded shadow-sm">D</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full max-w-4xl bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mt-10">
+    <div class="bg-white py-3 text-center font-bold text-gray-800 border-b">
+        Lịch Sử Lượt Chơi
+    </div>
+    <table class="w-full text-sm text-center border-collapse">
+        <thead class="bg-gray-200 text-gray-700">
+            <tr>
+                <th class="py-2 px-4 border-r border-gray-300 w-12">#</th>
+                <th class="py-2 px-4 border-r border-gray-300">Bước đi</th>
+                <th class="py-2 px-4">Thời Gian</th>
+            </tr>
+        </thead>
+        <tbody id="history-body" class="text-gray-600">
+            </tbody>
+    </table>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
